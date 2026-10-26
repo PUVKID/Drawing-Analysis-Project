@@ -1,0 +1,6 @@
+# AUTO‑GENERATED
+path: C:/Users/PUVKID/Desktop/심화캡스톤/yolo_single_object_dataset
+train: images/train
+val: images/val
+nc: 33
+names: ['house', 'window', 'door', 'tree', 'person', 'cloud', 'sun', 'wall', 'chimney', 'smoke', 'roof', 'fence', 'shadow', 'ground_line', 'grass', 'tulip', 'daisy', 'blueprint', 'face', 'eye', 'nose', 'mouth', 'shoulder', 'leg', 'foot', 'button', 'clothes', 'underwear', 'branch', 'leaf', 'crown', 'root', 'apple']
