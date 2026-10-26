@@ -1,64 +1,156 @@
-# 심화캡스톤
+<div align="center">
 
-![자료](https://img.shields.io/badge/연구·개발-코드%20아카이브-176B87) ![공개범위](https://img.shields.io/badge/데이터·모델-미포함-64748B)
+# 🎨 그림 객체 탐지와 AI 분석 리포트
 
-2025년 연구·개발 과정의 공개 가능한 코드와 실험 설정을 차수별로 보존한 저장소입니다. 원본 작업 자료는 수정하지 않고 공개용 사본을 구성했습니다.
+### YOLO · Gradio · 대화형 메시지 · PDF
 
-## 기술과 구성
+그림을 입력하면 객체 탐지 여부를 확인하고, 대화형 메시지와 PDF 리포트를 생성합니다.<br>
+합성 그림·학습 자료 준비부터 웹 프로토타입까지 연결한 그림 분석 연구입니다.
 
-확인한 기술: **Python**.
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![YOLO](https://img.shields.io/badge/Detection-YOLO-7C3AED?style=flat-square)
+![Gradio](https://img.shields.io/badge/UI-Gradio-F97316?style=flat-square)
 
-- `YOLOv8`
-- `app.py`
-- `build_and_finetune.py`
-- `config.py`
-- `csv_to_jsonl.py`
-- `drawing_yolo_run`
-- `fastAPI.py`
-- `fine_tuning.py`
-- `finetune_samples.py`
-- `list_finetuning_jops.py`
-- `synthetic_drawings_generator.py`
-- `train_result_check.py`
-- `train_yolo_dataset.py`
-- `train_yolo_pipeline.py`
-- `yolo_single_object_dataset`
-- `yolo_single_object_dataset.py`
+[빠른 시작](#quick-start) · [저장소 구성](#repository-structure) · [실험 설정](#data-settings)
 
-## 차수별 변경
+</div>
 
-| 차수·위치 | 파일 | 추가 | 변경 | 이전에만 존재 |
-|---|---:|---:|---:|---:|
-| `기본` | 17 | 17 | 0 | 0 |
+---
 
-자세한 비교 기준은 [버전 기록](docs/VERSIONS.md), 업로드 준비 내역은 [변경 기록](CHANGELOG.md)에 있습니다. 추가·변경·삭제 수는 같은 상위 묶음의 차수별 상대경로와 업로드 파일 SHA-256을 비교한 값입니다. 과거 개발 날짜나 동작 변경을 추정한 기록이 아닙니다.
+<a name="introduction"></a>
 
-## 재현하기
+## ✨ 프로젝트 소개
 
-1. 필요한 차수의 원본 README와 의존성 파일을 먼저 확인합니다.
-2. 별도 환경에서 해당 차수의 의존성을 설치합니다.
-3. 데이터셋·모델·인증 정보는 각자의 허가된 자료와 환경변수로 준비합니다.
+YOLO 추론, 언어 모델 메시지 생성, PDF 출력을 하나의 Gradio 화면에서 연결합니다. 별도 스크립트에는 그림 데이터 준비와 YOLO 학습, JSONL 변환 및 미세조정 작업이 담겨 있습니다.
 
-일부 코드는 과거 D 드라이브나 Docker 작업 경로를 참조합니다. 저장소는 코드 보관본이며 모든 실험·앱의 설치, 학습, 실행 성공을 확인한 배포본이 아닙니다.
+| 기능 | 구현 내용 |
+| :--- | :--- |
+| 🖼️ 그림 입력 | Gradio 이미지 입력을 임시 이미지로 저장 |
+| 🔎 객체 탐지 | 학습된 YOLO 가중치로 추론하고 탐지 유무 확인 |
+| 💬 메시지 생성 | 탐지 성공·실패 요약을 바탕으로 대화형 메시지 요청 |
+| 📄 PDF 생성 | 분석 시각·요약·메시지·입력 그림을 리포트로 구성 |
+| 🧪 데이터 준비 | 그림 생성, 패치 분할, 학습 라벨 구성 스크립트 |
+| 🧠 학습 도구 | YOLO 학습과 JSONL·미세조정 보조 코드 |
 
-## 공개 범위와 검증 한계
+```mermaid
+flowchart LR
+    A[입력 그림] --> B[YOLO 추론]
+    B --> C[탐지 여부와 시각 요약]
+    C --> D[언어 모델 메시지]
+    A --> E[PDF 리포트]
+    C --> E
+    D --> E
+    E --> F[Gradio 다운로드]
+```
 
-- 노트북의 실행 결과, 실행 횟수, 위젯·셀 메타데이터와 첨부 이미지를 제거했습니다.
-- 원데이터, 의료·개인 자료, 학습 가중치, 실행 파일, 캐시와 외부 SDK를 제외했습니다.
-- 비밀키·개인정보 탐지 또는 공개 권리가 불명확한 파일 0개는 업로드하지 않았습니다. 탐지 값과 개인 기록은 저장소에 싣지 않았습니다.
-- 포함 파일의 해시와 사본 변환을 기록했습니다. 코드 전체의 기능·보안·재현성을 보증하지 않습니다.
-- GitHub Actions 원본이 포함되면 `_github-workflows-reference`에 참고용으로 보관하며 자동 실행하지 않습니다.
+<a name="repository-structure"></a>
 
-## 라이선스
+## 📁 저장소 구성
 
-기존 LICENSE·NOTICE 파일과 개별 저작권 표시를 유지합니다. 새 라이선스를 임의로 부여하지 않았습니다. 라이선스 표시가 없는 코드의 이용 조건과 외부 의존성의 조건은 별도로 확인해 주세요.
+주요 파일을 발췌한 구조입니다.
 
-## 공개 사본의 환경변수
+```text
+.
+├── app.py
+├── fastAPI.py
+├── config.py
+├── synthetic_drawings_generator.py
+├── yolo_single_object_dataset.py
+├── train_yolo_dataset.py
+├── train_yolo_pipeline.py
+├── csv_to_jsonl.py
+├── fine_tuning.py
+├── build_and_finetune.py
+└── docs/VERSIONS.md
+```
 
-| 환경변수 | 준비할 값 |
-|---|---|
-| `OPENAI_API_KEY` | 사용자 본인의 서비스 API 키 |
-| `PDF_OUTPUT_PATH` | 보고서를 저장할 출력 폴더 경로 |
-| `YOLO_MODEL_PATH` | 허가된 모델 파일의 경로 |
+- [Gradio 앱](app.py): 입력·추론·대화·PDF 연결.
+- [YOLO 학습 파이프라인](train_yolo_pipeline.py): 이미지 분할과 예시 라벨·학습 구성.
+- [그림 생성](synthetic_drawings_generator.py)과 [단일 객체 데이터 준비](yolo_single_object_dataset.py).
+- [JSONL 변환](csv_to_jsonl.py), [미세조정 코드](fine_tuning.py), [버전 기록](docs/VERSIONS.md).
 
-이 값은 저장소에 포함하지 않습니다. 필요한 환경변수가 없으면 해당 줄의 `os.environ[...]`에서 `KeyError`로 즉시 알립니다. [사본 변환 기록](docs/SANITIZATION.md)을 확인해 주세요. API 호출·학습·앱 실행은 이번 준비에서 하지 않았습니다.
+<a name="implementation"></a>
+
+## 🧩 주요 기술과 처리 흐름
+
+`app.py`는 OpenCV로 입력을 저장하고 Ultralytics YOLO를 호출합니다. 추론 설정은 `conf=0.05`, `imgsz=640`입니다. 언어 모델에는 탐지 성공·실패와 분석 시각을 담은 텍스트 요약을 전달합니다. 이 경로에서 원본 그림 자체나 상세 객체 좌표가 언어 모델로 전달되는 것은 아닙니다.
+
+`build_pdf()`는 FPDF로 메시지와 그림을 문서에 배치합니다. `ask_gpt()`는 별도의 텍스트 질문 입력을 처리합니다. 모델 요청 이름은 코드에 지정된 `gpt-4o-mini`이며 실제 서비스 접근 가능 여부는 실행 환경에 따라 확인해야 합니다.
+
+<a name="quick-start"></a>
+
+## 🚀 빠른 시작
+
+저장소 루트에서 Python 환경을 준비합니다.
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python -m pip install gradio ultralytics fpdf2 openai opencv-python
+```
+
+1. 본인 환경에 `OPENAI_API_KEY`를 설정합니다.
+2. `app.py`의 `YOLO_MODEL_PATH`, `PROJECT_DIR`, `FONT_PATH`를 실제 모델·작업·폰트 경로에 맞춥니다.
+3. `INPUT_DIR`에 해당하는 입력 폴더를 준비합니다. 출력 폴더는 코드에서 생성합니다.
+4. 앱을 실행합니다.
+
+```powershell
+.\.venv\Scripts\python app.py
+```
+
+`config.py`의 환경변수와 `app.py`의 자체 경로 설정은 서로 별개입니다. `config.py`만 수정해도 모든 실행 파일에 적용된다고 가정하지 말고 사용할 진입점의 설정을 확인하세요. 모델 가중치·입력 그림·서비스 인증정보는 별도로 준비해야 합니다.
+
+<a name="data-settings"></a>
+
+## 📊 데이터 구성과 실험 설정
+
+| 항목 | 확인할 내용 |
+| :--- | :--- |
+| 그림 입력 | 앱에 넣을 이미지와 읽기·저장 경로 |
+| YOLO 가중치 | 해당 그림 객체로 학습된 모델 파일 |
+| 리포트 | `result/report.pdf` 경로에 생성하도록 구성 |
+| 예시 학습 클래스 | `train_yolo_pipeline.py`의 `door`, `roof`, `tree` |
+| 예시 학습 설정 | 30 epochs, 이미지 640, batch 8 |
+
+`train_yolo_pipeline.py`는 고정 위치의 예시 라벨을 생성하고 학습·검증에 같은 이미지 폴더를 지정합니다. 따라서 이 스크립트의 검증 수치를 독립 시험 성능으로 제시하면 안 됩니다. 데이터 생성 방식과 실제 정답 라벨을 구분해 실험을 설계해야 합니다.
+
+### 함께 보관한 학습 경로
+
+| 파일 | 입력·출력과 설정 |
+| :--- | :--- |
+| `synthetic_drawings_generator.py` | 33종 도형을 한 이미지에 조합하고, 학습·검증 각각 50,000장과 YOLO 라벨을 생성하도록 설정 |
+| `yolo_single_object_dataset.py` | 33개 클래스별로 단일 객체 이미지를 학습·검증 각각 10,000장씩 생성하도록 설정 |
+| `train_yolo_dataset.py` | 이미지 512, batch 16, 50 epoch 단위 목표값을 30회 설정하는 별도 학습 루프 |
+| `finetune_samples.py` | 코드에 직접 작성된 문장 10개를 CSV로 저장 |
+| `csv_to_jsonl.py` | CSV의 `prompt`·`completion`을 기존 형식 JSONL로 변환 |
+| `fine_tuning.py` | JSONL 파일을 외부 API에 올리고 미세조정 작업 생성 |
+| `build_and_finetune.py` | 대화형 JSONL 생성 후 기존 CLI의 데이터 준비·학습 명령 호출 |
+| `list_finetuning_jops.py` | 계정의 미세조정 작업 목록 조회 |
+| `train_result_check.py` | 지정된 가중치와 이미지 한 장으로 `conf=0.25` 추론 |
+| `fastAPI.py` | `/gpt` POST 요청의 텍스트를 별도 모델 요청으로 전달 |
+
+위 생성 장수는 **코드의 목표 설정**입니다. 생성 이미지나 학습 완료 결과가 저장소에 모두 들어 있다는 뜻은 아닙니다. `train_yolo_dataset.py`는 검증 폴더가 없으면 학습 폴더를 복사하고, `resume_flag`를 계산하지만 `model.train()` 인자로 전달하지 않습니다. 실제 재개 동작을 보장하는 안내로 해석하지 마세요.
+
+미세조정 파일들은 JSONL 형식과 SDK·CLI 호출 세대가 서로 다릅니다. 기본 앱 실행과 분리해 보관하며, 최신 서비스 호환성 확인 없이 일괄 실행하지 않습니다. 예시 문장도 실제 응답 자료나 검증된 심리 판정 기준이 아닙니다.
+
+생성 메시지는 연구용 프로토타입의 출력입니다. 이 코드만으로 그림의 심리적 의미나 치료 효과가 검증되었다고 해석하지 않습니다.
+
+<a name="troubleshooting"></a>
+
+## 🛠️ 문제 해결
+
+| 증상 | 확인할 내용 |
+| :--- | :--- |
+| `OPENAI_API_KEY` 오류 | 실행 프로세스가 환경변수를 읽을 수 있는지 확인 |
+| 가중치 파일 오류 | `app.py`에 직접 지정한 모델 경로 |
+| 입력 저장 실패 | `INPUT_DIR` 폴더 존재와 쓰기 권한 |
+| PDF 한글 오류 | 폰트 파일 경로와 FPDF 패키지 구성 |
+| 탐지 결과가 비어 있음 | 입력·모델 클래스·신뢰도 설정을 함께 확인 |
+| API 호출 오류 | 서비스 인증·연결·모델 접근 권한 |
+
+---
+
+<div align="center">
+
+**그림 입력에서 리포트까지, 처리 단계를 연결하는 연구입니다.**
+
+</div>
