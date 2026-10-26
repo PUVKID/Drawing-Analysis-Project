@@ -1,8 +1,12 @@
 <div align="center">
 
-# Drawing-Analysis-Project
+# 그림 객체 탐지와 AI 분석 리포트
 
-## 🎨 그림 객체 탐지와 AI 분석 리포트
+**Drawing-Analysis-Project**
+
+**기술 분류:** 컴퓨터 비전·자연어 처리 › 검출·언어 모델 연결 › 그림 탐지 요약→대화·PDF
+
+
 
 ### YOLO · Gradio · 대화형 메시지 · PDF
 
@@ -15,7 +19,33 @@
 
 [빠른 시작](#quick-start) · [저장소 구성](#repository-structure) · [실험 설정](#data-settings)
 
+[예시 이미지](#preview)
+
 </div>
+
+<a name="preview"></a>
+
+## 🖼️ 예시로 보기
+
+<p align="center"><img src="assets/previews/code-explainer.png" width="900" alt="코드 기반 설명도 · Drawing-Analysis-Project" /></p>
+
+**코드 기반 설명도** — `analyze_and_suggest()`의 입력 이미지 저장 → YOLO 추론 → 대화 메시지 생성 → PDF 반환 흐름을 설명한 도식입니다. 실제 실행 화면이나 새 측정 결과가 아닙니다.
+
+[근거 파일 보기](app.py)
+
+
+
+<a name="input-processing-output"></a>
+
+## 🔄 입력·처리·출력
+
+| 단계 | 이 프로젝트에서 다루는 내용 |
+| :--- | :--- |
+| 입력 | 그림 이미지·사용자 텍스트 |
+| 처리 | YOLO 탐지 여부 요약을 GPT-4o-mini 텍스트 요청에 연결 |
+| 출력 | 대화 메시지·입력 그림을 담은 PDF |
+
+
 
 ---
 
