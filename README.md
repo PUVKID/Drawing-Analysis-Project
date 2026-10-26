@@ -1,6 +1,8 @@
 <div align="center">
 
-# 🎨 그림 객체 탐지와 AI 분석 리포트
+# Drawing-Analysis-Project
+
+## 🎨 그림 객체 탐지와 AI 분석 리포트
 
 ### YOLO · Gradio · 대화형 메시지 · PDF
 
@@ -69,7 +71,9 @@ flowchart LR
 - [그림 생성](synthetic_drawings_generator.py)과 [단일 객체 데이터 준비](yolo_single_object_dataset.py).
 - [JSONL 변환](csv_to_jsonl.py), [미세조정 코드](fine_tuning.py), [버전 기록](docs/VERSIONS.md).
 
-<a name="implementation"></a>
+### 관련 연구와 공개 범위
+
+[미술치료 대화 연구](https://github.com/PUVKID/Art-Therapy-Dialogue-Project)는 같은 YOLO 탐지 요약·대화·PDF 설계를 논문과 노트북으로 설명합니다. 이 저장소는 데이터 생성·학습·미세조정·API 진입점을 포함한 Python 코드 구성을 보존합니다. 같은 연구 계열이라는 사실과 두 저장소의 파일 구성이 완전히 동일하다는 주장은 구분합니다.
 
 ## 🧩 주요 기술과 처리 흐름
 
