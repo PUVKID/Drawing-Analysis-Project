@@ -9,22 +9,17 @@ YOLO 탐지 결과를 GPT 대화와 그림 분석 PDF로 연결합니다.
 
 **기술 분류:** 컴퓨터 비전·자연어 처리 › 검출·언어 모델 연결 › 그림 탐지 요약→대화·PDF
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![YOLO](https://img.shields.io/badge/Detection-YOLO-7C3AED?style=flat-square)
-![Gradio](https://img.shields.io/badge/UI-Gradio-F97316?style=flat-square)
+`Python`
+`YOLO`
+`Gradio`
 
 [빠른 시작](#quick-start) · [저장소 구성](#repository-structure) · [실험 설정](#data-settings)
 
-[예시 이미지](#preview)
+[핵심 구성](#input-processing-output)
 
 </div>
 
 <a name="overview"></a>
-
-## 🗺️ 한눈에 보는 구성
-
-<p align="center"><img src="assets/overview.png" width="960" alt="프로젝트의 입력·처리·출력을 정리한 설명도" /></p>
-보관한 프로젝트 자료의 흐름을 정리한 설명도입니다.
 
 ## ✨ 최신 차수에서 달라진 점
 
@@ -38,17 +33,7 @@ YOLO 그림 탐지, 텍스트 질문, PDF 기록을 연결하는 기본 앱입�
 
 **자료별 안내:** [기본](docs/versions/stage-1.md) · [전체 기록](docs/VERSIONS.md)
 
-
 <a name="preview"></a>
-
-## 🖼️ 예시로 보기
-
-<p align="center"><img src="assets/previews/code-explainer.png" width="900" alt="코드 기반 설명도 · Drawing-Analysis-Project" /></p>
-
-**코드 기반 설명도** — `analyze_and_suggest()`의 입력 이미지 저장 → YOLO 추론 → 대화 메시지 생성 → PDF 반환 흐름을 설명한 도식입니다. 실제 실행 화면이나 새 측정 결과가 아닙니다.
-
-[근거 파일 보기](app.py)
-
 
 <a name="input-processing-output"></a>
 
@@ -56,9 +41,9 @@ YOLO 그림 탐지, 텍스트 질문, PDF 기록을 연결하는 기본 앱입�
 
 | 단계 | 이 프로젝트에서 다루는 내용 |
 | :--- | :--- |
-| 입력 | 그림 이미지·사용자 텍스트 |
-| 처리 | YOLO 탐지 여부 요약을 GPT-4o-mini 텍스트 요청에 연결 |
-| 출력 | 대화 메시지·입력 그림을 담은 PDF |
+| 📥 입력 | 그림 이미지·사용자 텍스트 |
+| ⚙️ 처리 | YOLO 탐지 여부 요약을 GPT-4o-mini 텍스트 요청에 연결 |
+| 📤 출력 | 대화 메시지·입력 그림을 담은 PDF |
 
 
 ---
