@@ -1,20 +1,13 @@
 <div align="center">
 
 <a name="그림-객체-탐지와-ai-분석-리포트"></a>
-
-# 🔬 그림 객체 탐지와 AI 분석 리포트
-
-**Drawing-Analysis-Project**
-
-**기술 분류:** 컴퓨터 비전·자연어 처리 › 검출·언어 모델 연결 › 그림 탐지 요약→대화·PDF
-
-
 <a name="yolo--gradio--대화형-메시지--pdf"></a>
 
-### 🧩 YOLO · Gradio · 대화형 메시지 · PDF
+# 🎨 Drawing Analysis Project
 
-그림을 입력하면 객체 탐지 여부를 확인하고, 대화형 메시지와 PDF 리포트를 생성합니다.<br>
-합성 그림·학습 자료 준비부터 웹 프로토타입까지 연결한 그림 분석 연구입니다.
+YOLO 탐지 결과를 GPT 대화와 그림 분석 PDF로 연결합니다.
+
+**기술 분류:** 컴퓨터 비전·자연어 처리 › 검출·언어 모델 연결 › 그림 탐지 요약→대화·PDF
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![YOLO](https://img.shields.io/badge/Detection-YOLO-7C3AED?style=flat-square)
@@ -25,6 +18,26 @@
 [예시 이미지](#preview)
 
 </div>
+
+<a name="overview"></a>
+
+## 🗺️ 한눈에 보는 구성
+
+<p align="center"><img src="assets/overview.png" width="960" alt="프로젝트의 입력·처리·출력을 정리한 설명도" /></p>
+보관한 프로젝트 자료의 흐름을 정리한 설명도입니다.
+
+## ✨ 최신 차수에서 달라진 점
+
+YOLO 그림 탐지, 텍스트 질문, PDF 기록을 연결하는 기본 앱입니다.
+
+숫자 차수나 사용자 최종 확정은 확인되지 않습니다.
+
+- analyze_and_suggest는 업로드 그림의 탐지 결과를 분석·제안 흐름으로 전달합니다.
+- ask_gpt는 텍스트 대화, build_pdf는 대화 결과의 PDF 생성을 담당합니다.
+- 학습용 자료 준비·YOLO 학습은 별도 스크립트에 있습니다. 실행 앱과 학습 코드를 구분해서 읽습니다.
+
+**자료별 안내:** [기본](docs/versions/stage-1.md) · [전체 기록](docs/VERSIONS.md)
+
 
 <a name="preview"></a>
 
