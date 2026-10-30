@@ -19,6 +19,18 @@ YOLO 탐지 결과를 GPT 대화와 그림 분석 PDF로 연결합니다.
 
 </div>
 
+## 🗂️ 자료별 상세 안내
+
+| 자료 | 세부 설명 |
+| :--- | :--- |
+| 📚 기본 | [📖 내용·근거](docs/versions/stage-1.md) |
+
+
+
+[**🗂️ 자료별 상세 안내와 변화 →**](docs/REVISION_INDEX.md)
+
+
+
 <a name="overview"></a>
 
 ## ✨ 주요 개발 내용
