@@ -6,7 +6,7 @@ client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])  # 본인의 API 키
 
 # ② JSONL 파일 업로드
 upload_resp = client.files.create(
-    file=open(r"C:\\Users\\PUVKID\\Desktop\\심화캡스톤\\train_prepared.jsonl", "rb"),
+    file=open('./train_prepared.jsonl', "rb"),
     purpose="fine-tune"
 )
 training_file_id = upload_resp.id

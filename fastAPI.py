@@ -19,7 +19,7 @@ async def chat_with_gpt(data: ChatRequest):
     return {"response": response["choices"][0]["message"]["content"]}
 
 # 실행 코드
-# cd "C:\Users\PUVKID\Desktop\심화캡스톤"
+# 저장소 최상위 폴더에서 실행합니다.
 # uvicorn fastAPI:app --reload --host 127.0.0.1 --port 8000"""
 
 # curl로 테스트

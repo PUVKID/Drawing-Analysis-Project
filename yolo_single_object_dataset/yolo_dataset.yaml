@@ -1,5 +1,5 @@
 # AUTO‑GENERATED
-path: C:/Users/PUVKID/Desktop/심화캡스톤/yolo_single_object_dataset
+path: ${USERPROFILE}/Desktop/심화캡스톤/yolo_single_object_dataset
 train: images/train
 val: images/val
 nc: 33

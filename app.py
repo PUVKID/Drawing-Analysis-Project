@@ -14,8 +14,8 @@ OPENAI_API_KEY = os.getenv(
     "OPENAI_API_KEY",
     os.environ["OPENAI_API_KEY"]
 )
-YOLO_MODEL_PATH = r"C:\Users\PUVKID\Desktop\심화캡스톤\drawing_yolo_run\v8_finetune\weights\last.pt"
-PROJECT_DIR = Path(r"C:\Users\PUVKID\Desktop\심화캡스톤")
+YOLO_MODEL_PATH = './drawing_yolo_run/v8_finetune/weights/last.pt'
+PROJECT_DIR = Path('./')
 INPUT_DIR = PROJECT_DIR / "input"
 RESULT_DIR = PROJECT_DIR / "result"
 RESULT_DIR.mkdir(exist_ok=True)

@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 
 # ① CSV 경로
-BASE = Path(r"C:\Users\PUVKID\Desktop\심화캡스톤")
+BASE = Path('./')
 csv_file = BASE / "finetune_samples.csv"
 jsonl_file = BASE / "train_prepared.jsonl"
 

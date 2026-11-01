@@ -1,7 +1,7 @@
 task: detect
 mode: train
 model: yolov8n.pt
-data: C:\Users\PUVKID\Desktop\심화캡스톤\yolo_single_object_dataset\yolo_dataset.yaml
+data: ${USERPROFILE}\Desktop\심화캡스톤\yolo_single_object_dataset\yolo_dataset.yaml
 epochs: 50
 time: null
 patience: 0

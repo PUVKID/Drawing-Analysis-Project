@@ -2,7 +2,7 @@
 
 import pandas as pd, json, subprocess, os, sys, shutil, pathlib
 
-CSV       = r"C:\\Users\\PUVKID\\Desktop\\심화캡스톤\\finetune_samples.csv"
+CSV       = './finetune_samples.csv'
 JSONL     = "train_prepared.jsonl"
 MODEL_BASE= "gpt-3.5-turbo"
 N_EPOCH   = 1000

@@ -4,7 +4,7 @@ import random
 from ultralytics import YOLO
 
 # 1. 경로 설정
-IMG_SOURCE = "C:\\Users\\PUVKID\\Desktop\\심화캡스톤\\A_2D_digital_compilation_of_twelve_child-like_cray.png.png"
+IMG_SOURCE = './A_2D_digital_compilation_of_twelve_child-like_cray.png.png'
 IMG_DIR = "generated/images/train"
 LABEL_DIR = "generated/labels/train"
 MODEL_PATH = "models/yolov8n.pt"

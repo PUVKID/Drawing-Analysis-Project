@@ -10,7 +10,7 @@ from pathlib import Path
 from ultralytics import YOLO
 
 # ───────────────────────── 설정 ─────────────────────────
-DATA_DIR  = Path(r"C:\\Users\\PUVKID\\Desktop\\심화캡스톤\\yolo_single_object_dataset")   # ★ 데이터 폴더 절대경로
+DATA_DIR  = Path('./yolo_single_object_dataset')   # ★ 저장소 기준 데이터 폴더
 WEIGHTS   = "yolov8n.pt"        # 또는 기존 best.pt
 RUN_NAME  = "v8_finetune"
 IMG_SIZE  = 512

@@ -2,7 +2,7 @@ import pandas as pd
 from pathlib import Path
 
 # ① CSV 저장 위치
-BASE_DIR = Path(r"C:\\Users\\PUVKID\\Desktop\\심화캡스톤")
+BASE_DIR = Path('./')
 OUT_CSV  = BASE_DIR / "finetune_samples.csv"
 
 # ② 실제 학습 샘플 (prompt엔 반드시 구분자 '->'를 포함)
