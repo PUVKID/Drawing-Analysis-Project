@@ -212,13 +212,11 @@ python -m venv .venv
 저장소 최상위 폴더에서 실행합니다. 모델·입력·학습 자료의 경로는 해당 폴더를 기준으로 한 상대 경로이며, 필요한 모델과 데이터는 실행 전에 준비합니다.
 
 
-<details>
-<summary>🧹 공개 자료 정리 기록</summary>
 
-| 검수 대상 | 연결 자료 | 상세·이번 비교 |
-| :--- | :--- | :--- |
-| **기존 코드와 자료** | [📁 검수 자료](docs/publication-review) | [📖 정리 내용](docs/publication-review/item-1.md) · [🔎 파일 비교](docs/publication-review/공개파일변경.json) |
 
-[🗂️ 전체 차수와 자료](docs/REVISION_INDEX.md)
 
-</details>
+## 🗂️ 자료 폴더와 차수별 변화
+
+| 자료 | 자료 폴더 | 설명 | 비교·구성 |
+|---|---|---|---|
+| 기본 | [자료 폴더](docs) | [내용](docs/versions/stage-1.md) | [비교·구성](docs/VERSIONS.md) |
