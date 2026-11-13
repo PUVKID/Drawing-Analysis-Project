@@ -1,5 +1,9 @@
 # 현재 공개 파일과 차수별 변화
 
+<!-- reading-levels17:start -->
+**읽기 수준 선택** · [LEVEL 1 - Beginner](%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A81.md) · [LEVEL 2 - Explorer](%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A82.md) · [LEVEL 3 - Practitioner](%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A83.md) · [LEVEL 4 - Advanced](%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A84.md) · [LEVEL 5 - Expert](%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A85.md)
+<!-- reading-levels17:end -->
+
 | 차수·위치 | 현재 파일 | 추가 경로 | 내용 변경 | 이전에만 존재 |
 |---|---:|---:|---:|---:|
 | `기본` | 17 | 17 | 0 | 0 |
@@ -17,7 +21,7 @@
 |---|---|---|---|
 | [기본](versions/stage-1.md) | `app.py` | YOLO 그림 탐지, 텍스트 질문, PDF 기록을 연결하는 기본 앱입니다. | [자료](../app.py) |
 
-연구 자료와 관련 코드를 경로별로 정리했습니다.
+**연구 자료와 관련 코드를 경로별로 정리했습니다.**
 
 <a id="-연구개발-자료"></a>
 

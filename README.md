@@ -5,7 +5,17 @@
 
 # Drawing Analysis Project
 
-YOLO 탐지 결과를 GPT 대화와 그림 분석 PDF로 연결합니다.
+**YOLO 탐지 결과를 GPT 대화와 그림 분석 PDF로 연결합니다.**
+
+<!-- reading-levels17:start -->
+| 읽기 수준 | 안내 내용 |
+| --- | --- |
+| [LEVEL 1 - Beginner](docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A81.md) | 낯선 용어를 풀고 입력부터 결과까지 구체적인 예로 읽기 |
+| [LEVEL 2 - Explorer](docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A82.md) | 핵심 개념과 처리 흐름의 관계 이해 |
+| [LEVEL 3 - Practitioner](docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A83.md) | 실험·사용 절차와 결과 해석 따라가기 |
+| [LEVEL 4 - Advanced](docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A84.md) | 코드 구조·설정·설계 선택과 제약 검토 |
+| [LEVEL 5 - Expert](docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A85.md) | 논문·프로토콜·분모·누수·미검증 범위 대조 |
+<!-- reading-levels17:end -->
 
 분야: 컴퓨터 비전·자연어 처리 › 검출·언어 모델 연결 › 그림 탐지 요약→대화·PDF
 
@@ -172,18 +182,126 @@ python -m venv .venv
 
 ### 함께 보관한 학습 경로
 
-| 파일 | 입력·출력과 설정 |
-| :--- | :--- |
-| `synthetic_drawings_generator.py` | 33종 도형을 한 이미지에 조합하고, 학습·검증 각각 50,000장과 YOLO 라벨을 생성하도록 설정 |
-| `yolo_single_object_dataset.py` | 33개 클래스별로 단일 객체 이미지를 학습·검증 각각 10,000장씩 생성하도록 설정 |
-| `train_yolo_dataset.py` | 이미지 512, batch 16, 50 epoch 단위 목표값을 30회 설정하는 별도 학습 루프 |
-| `finetune_samples.py` | 코드에 직접 작성된 문장 10개를 CSV로 저장 |
-| `csv_to_jsonl.py` | CSV의 `prompt`·`completion`을 기존 형식 JSONL로 변환 |
-| `fine_tuning.py` | JSONL 파일을 외부 API에 올리고 미세조정 작업 생성 |
-| `build_and_finetune.py` | 대화형 JSONL 생성 후 기존 CLI의 데이터 준비·학습 명령 호출 |
-| `list_finetuning_jops.py` | 계정의 미세조정 작업 목록 조회 |
-| `train_result_check.py` | 지정된 가중치와 이미지 한 장으로 `conf=0.25` 추론 |
-| `fastAPI.py` | `/gpt` POST 요청의 텍스트를 별도 모델 요청으로 전달 |
+<a id="layout18-table-6-row-1"></a>
+
+**`synthetic_drawings_generator.py`**
+
+**파일**
+
+`synthetic_drawings_generator.py`
+
+**입력·출력과 설정**
+
+33종 도형을 한 이미지에 조합하고, 학습·검증 각각 50,000장과 YOLO 라벨을 생성하도록 설정
+
+<a id="layout18-table-6-row-2"></a>
+
+**`yolo_single_object_dataset.py`**
+
+**파일**
+
+`yolo_single_object_dataset.py`
+
+**입력·출력과 설정**
+
+33개 클래스별로 단일 객체 이미지를 학습·검증 각각 10,000장씩 생성하도록 설정
+
+<a id="layout18-table-6-row-3"></a>
+
+**`train_yolo_dataset.py`**
+
+**파일**
+
+`train_yolo_dataset.py`
+
+**입력·출력과 설정**
+
+이미지 512, batch 16, 50 epoch 단위 목표값을 30회 설정하는 별도 학습 루프
+
+<a id="layout18-table-6-row-4"></a>
+
+**`finetune_samples.py`**
+
+**파일**
+
+`finetune_samples.py`
+
+**입력·출력과 설정**
+
+코드에 직접 작성된 문장 10개를 CSV로 저장
+
+<a id="layout18-table-6-row-5"></a>
+
+**`csv_to_jsonl.py`**
+
+**파일**
+
+`csv_to_jsonl.py`
+
+**입력·출력과 설정**
+
+CSV의 `prompt`·`completion`을 기존 형식 JSONL로 변환
+
+<a id="layout18-table-6-row-6"></a>
+
+**`fine_tuning.py`**
+
+**파일**
+
+`fine_tuning.py`
+
+**입력·출력과 설정**
+
+JSONL 파일을 외부 API에 올리고 미세조정 작업 생성
+
+<a id="layout18-table-6-row-7"></a>
+
+**`build_and_finetune.py`**
+
+**파일**
+
+`build_and_finetune.py`
+
+**입력·출력과 설정**
+
+대화형 JSONL 생성 후 기존 CLI의 데이터 준비·학습 명령 호출
+
+<a id="layout18-table-6-row-8"></a>
+
+**`list_finetuning_jops.py`**
+
+**파일**
+
+`list_finetuning_jops.py`
+
+**입력·출력과 설정**
+
+계정의 미세조정 작업 목록 조회
+
+<a id="layout18-table-6-row-9"></a>
+
+**`train_result_check.py`**
+
+**파일**
+
+`train_result_check.py`
+
+**입력·출력과 설정**
+
+지정된 가중치와 이미지 한 장으로 `conf=0.25` 추론
+
+<a id="layout18-table-6-row-10"></a>
+
+**`fastAPI.py`**
+
+**파일**
+
+`fastAPI.py`
+
+**입력·출력과 설정**
+
+`/gpt` POST 요청의 텍스트를 별도 모델 요청으로 전달
+
 
 위 생성 장수는 **코드의 목표 설정**입니다. `train_yolo_dataset.py`는 검증 폴더가 없으면 학습 폴더를 복사하고, `resume_flag`를 계산하지만 `model.train()` 인자로 전달하지 않습니다. 학습 재개 연결은 보완이 필요한 부분입니다.
 
@@ -314,13 +432,66 @@ flowchart LR
 
 위 목록은 저장소의 실행·보조 코드입니다. 아래 경로는 앱·학습 코드가 실행할 때 사용하는 입력·출력 위치이므로, 코드가 있다는 사실과 모델·데이터가 준비됐다는 사실을 구분합니다.
 
-| 실행 시 필요한 위치 | 용도 |
-|---|---|
-| `input/` | 업로드 그림을 `temp.jpg`로 저장할 폴더. 앱에서 이 폴더를 자동 생성하지 않으므로 미리 준비 |
-| `result/` | 앱이 생성하는 보고서 폴더 |
-| `drawing_yolo_run/v8_finetune/weights/last.pt` | 기본 앱이 읽는 YOLO 가중치 |
-| `yolo_single_object_dataset/` | 별도 YOLO 학습 루프가 읽는 학습 자료 |
-| `generated/` | 12개 패치와 예시 라벨을 생성하는 다른 학습 경로 |
+<a id="layout18-table-11-row-1"></a>
+
+**`input/`**
+
+**실행 시 필요한 위치**
+
+`input/`
+
+**용도**
+
+업로드 그림을 `temp.jpg`로 저장할 폴더. 앱에서 이 폴더를 자동 생성하지 않으므로 미리 준비
+
+<a id="layout18-table-11-row-2"></a>
+
+**`result/`**
+
+**실행 시 필요한 위치**
+
+`result/`
+
+**용도**
+
+앱이 생성하는 보고서 폴더
+
+<a id="layout18-table-11-row-3"></a>
+
+**`drawing_yolo_run/v8_finetune/weights/last.pt`**
+
+**실행 시 필요한 위치**
+
+`drawing_yolo_run/v8_finetune/weights/last.pt`
+
+**용도**
+
+기본 앱이 읽는 YOLO 가중치
+
+<a id="layout18-table-11-row-4"></a>
+
+**`yolo_single_object_dataset/`**
+
+**실행 시 필요한 위치**
+
+`yolo_single_object_dataset/`
+
+**용도**
+
+별도 YOLO 학습 루프가 읽는 학습 자료
+
+<a id="layout18-table-11-row-5"></a>
+
+**`generated/`**
+
+**실행 시 필요한 위치**
+
+`generated/`
+
+**용도**
+
+12개 패치와 예시 라벨을 생성하는 다른 학습 경로
+
 
 <a id="️-환경과-설정"></a>
 
@@ -328,13 +499,86 @@ flowchart LR
 
 기본 앱에는 Python과 `gradio`, `ultralytics`, `opencv-python`, `fpdf2`, `openai`가 필요합니다. 모델 가중치와 한글 폰트도 별도로 준비합니다. 앱과 API·미세조정 보조 코드의 SDK 호출 방식을 구분해 실행 환경을 준비합니다.
 
-| 설정 | 기본 앱에서 읽는 값 | 조정할 곳 |
-|---|---|---|
-| API 인증 | 프로세스의 `OPENAI_API_KEY` | 본인 실행 환경 |
-| YOLO 가중치 | `./drawing_yolo_run/v8_finetune/weights/last.pt` | `app.py`의 `YOLO_MODEL_PATH` |
-| 작업 폴더 | `./` | `app.py`의 `PROJECT_DIR` |
-| 임시 그림·보고서 | `input/temp.jpg`, `result/report.pdf` | `TEMP_IMG_PATH`, `PDF_OUTPUT_PATH` |
-| PDF 글꼴 | Windows 맑은고딕 파일 경로 | `app.py`의 `FONT_PATH` |
+<a id="layout18-table-12-row-1"></a>
+
+**API 인증**
+
+**설정**
+
+API 인증
+
+**기본 앱에서 읽는 값**
+
+프로세스의 `OPENAI_API_KEY`
+
+**조정할 곳**
+
+본인 실행 환경
+
+<a id="layout18-table-12-row-2"></a>
+
+**YOLO 가중치**
+
+**설정**
+
+YOLO 가중치
+
+**기본 앱에서 읽는 값**
+
+`./drawing_yolo_run/v8_finetune/weights/last.pt`
+
+**조정할 곳**
+
+`app.py`의 `YOLO_MODEL_PATH`
+
+<a id="layout18-table-12-row-3"></a>
+
+**작업 폴더**
+
+**설정**
+
+작업 폴더
+
+**기본 앱에서 읽는 값**
+
+`./`
+
+**조정할 곳**
+
+`app.py`의 `PROJECT_DIR`
+
+<a id="layout18-table-12-row-4"></a>
+
+**임시 그림·보고서**
+
+**설정**
+
+임시 그림·보고서
+
+**기본 앱에서 읽는 값**
+
+`input/temp.jpg`, `result/report.pdf`
+
+**조정할 곳**
+
+`TEMP_IMG_PATH`, `PDF_OUTPUT_PATH`
+
+<a id="layout18-table-12-row-5"></a>
+
+**PDF 글꼴**
+
+**설정**
+
+PDF 글꼴
+
+**기본 앱에서 읽는 값**
+
+Windows 맑은고딕 파일 경로
+
+**조정할 곳**
+
+`app.py`의 `FONT_PATH`
+
 
 `config.py`에는 `OPENAI_API_KEY`, `YOLO_MODEL_PATH`, `PDF_OUTPUT_PATH` 환경변수가 정의돼 있지만 기본 앱은 이 모듈을 가져오지 않고 자체 경로를 사용합니다. 환경변수 이름만 설정한 뒤 앱의 가중치·출력 경로도 바뀌었다고 생각하지 않도록 진입점의 값을 확인합니다.
 
@@ -371,13 +615,86 @@ python -m venv .venv
 
 ## 함께 보관한 학습 경로
 
-| 경로 | 입력·처리·출력 | 해석할 때 주의할 점 |
-|---|---|---|
-| [복합 그림 생성](synthetic_drawings_generator.py) | 33종 도형을 조합해 640 크기 이미지와 YOLO 라벨을 작성. 학습·검증 각각 50,000장이 목표 설정 | 코드의 생성 목표이며 확보된 데이터 장수나 완료 기록을 뜻하지 않음 |
-| [단일 객체 생성](yolo_single_object_dataset.py) | 클래스별 단일 객체를 학습·검증 각각 10,000장씩 생성하도록 구성 | 33개 클래스의 이름·색상·배치 규칙은 생성 코드에서 확인 |
-| [12개 패치 예시](train_yolo_pipeline.py) | 한 그림을 3×4로 나누고 문·지붕·나무의 고정 예시 상자 라벨을 생성. 30 epoch·640·batch 8 설정 | 실제 객체를 자동 주석한 정답이 아니며 train과 val에 같은 이미지 폴더를 지정 |
-| [별도 학습 루프](train_yolo_dataset.py) | 이미지 512·batch16, 50 epoch 단위 목표값을 30회 설정 | 검증 폴더가 없으면 학습 폴더를 복사. `resume_flag`는 계산하지만 학습 호출에 전달하지 않음 |
-| [단일 그림 추론](train_result_check.py) | 지정한 가중치와 입력 한 장을 `conf=0.25`로 추론 | 앱의 0.05 임계값과 다르며 전체 시험 자료 성능이 아님 |
+<a id="layout18-table-13-row-1"></a>
+
+**[복합 그림 생성](synthetic_drawings_generator.py)**
+
+**경로**
+
+[복합 그림 생성](synthetic_drawings_generator.py)
+
+**입력·처리·출력**
+
+33종 도형을 조합해 640 크기 이미지와 YOLO 라벨을 작성. 학습·검증 각각 50,000장이 목표 설정
+
+**해석할 때 주의할 점**
+
+코드의 생성 목표이며 확보된 데이터 장수나 완료 기록을 뜻하지 않음
+
+<a id="layout18-table-13-row-2"></a>
+
+**[단일 객체 생성](yolo_single_object_dataset.py)**
+
+**경로**
+
+[단일 객체 생성](yolo_single_object_dataset.py)
+
+**입력·처리·출력**
+
+클래스별 단일 객체를 학습·검증 각각 10,000장씩 생성하도록 구성
+
+**해석할 때 주의할 점**
+
+33개 클래스의 이름·색상·배치 규칙은 생성 코드에서 확인
+
+<a id="layout18-table-13-row-3"></a>
+
+**[12개 패치 예시](train_yolo_pipeline.py)**
+
+**경로**
+
+[12개 패치 예시](train_yolo_pipeline.py)
+
+**입력·처리·출력**
+
+한 그림을 3×4로 나누고 문·지붕·나무의 고정 예시 상자 라벨을 생성. 30 epoch·640·batch 8 설정
+
+**해석할 때 주의할 점**
+
+실제 객체를 자동 주석한 정답이 아니며 train과 val에 같은 이미지 폴더를 지정
+
+<a id="layout18-table-13-row-4"></a>
+
+**[별도 학습 루프](train_yolo_dataset.py)**
+
+**경로**
+
+[별도 학습 루프](train_yolo_dataset.py)
+
+**입력·처리·출력**
+
+이미지 512·batch16, 50 epoch 단위 목표값을 30회 설정
+
+**해석할 때 주의할 점**
+
+검증 폴더가 없으면 학습 폴더를 복사. `resume_flag`는 계산하지만 학습 호출에 전달하지 않음
+
+<a id="layout18-table-13-row-5"></a>
+
+**[단일 그림 추론](train_result_check.py)**
+
+**경로**
+
+[단일 그림 추론](train_result_check.py)
+
+**입력·처리·출력**
+
+지정한 가중치와 입력 한 장을 `conf=0.25`로 추론
+
+**해석할 때 주의할 점**
+
+앱의 0.05 임계값과 다르며 전체 시험 자료 성능이 아님
+
 
 텍스트 학습 보조는 [예시 문장 CSV 생성](finetune_samples.py) → [기존 prompt/completion JSONL 변환](csv_to_jsonl.py) 또는 [대화형 JSONL·CLI 요청](build_and_finetune.py)으로 나뉩니다. [fine_tuning.py](fine_tuning.py)는 파일 업로드와 미세조정 작업 생성을 요청하고, [list_finetuning_jops.py](list_finetuning_jops.py)는 작업 목록을 조회합니다.
 
@@ -403,17 +720,114 @@ python -m venv .venv
 
 ## 제약과 문제 해결
 
-| 증상·제약 | 원인과 확인할 지점 |
-|---|---|
-| 시작할 때 API 키 오류 | 모듈 초기화 때 `OPENAI_API_KEY`를 읽습니다. 실행 프로세스의 환경을 확인 |
-| 가중치 로드 오류 | 앱에 지정한 `last.pt`의 존재와 YOLO 모델 호환성 확인 |
-| 그림 저장 실패 | `input/` 폴더와 쓰기 권한 확인. 업로드 그림이 없는 호출도 따로 처리하지 않음 |
-| PDF 글꼴 오류 | 실제 한글 폰트 파일과 FPDF 패키지 구성을 확인 |
-| 메시지가 API 오류 문구임 | 예외가 메시지 문자열로 반환되며 그대로 PDF에 들어갈 수 있음. 정상 생성 결과와 구분 |
-| 이전 그림·PDF가 바뀜 | 임시 그림과 PDF가 고정 파일명입니다. 필요한 결과는 다음 실행 전에 별도 보관 |
-| 여러 사용자의 결과가 섞일 수 있음 | 요청별 파일명·저장공간·동시성 분리가 없는 기본 프로토타입 |
-| 이전 대화나 그림이 질문에 반영되지 않음 | `ask_gpt()`는 입력 질문 한 건을 독립 요청으로 전달 |
-| 학습이 이어진다고 표시되지만 재개가 불명확함 | `resume_flag`의 계산과 실제 `model.train()` 인자가 연결돼 있지 않음 |
+<a id="layout18-table-14-row-1"></a>
+
+**시작할 때 API 키 오류**
+
+**증상·제약**
+
+시작할 때 API 키 오류
+
+**원인과 확인할 지점**
+
+모듈 초기화 때 `OPENAI_API_KEY`를 읽습니다. 실행 프로세스의 환경을 확인
+
+<a id="layout18-table-14-row-2"></a>
+
+**가중치 로드 오류**
+
+**증상·제약**
+
+가중치 로드 오류
+
+**원인과 확인할 지점**
+
+앱에 지정한 `last.pt`의 존재와 YOLO 모델 호환성 확인
+
+<a id="layout18-table-14-row-3"></a>
+
+**그림 저장 실패**
+
+**증상·제약**
+
+그림 저장 실패
+
+**원인과 확인할 지점**
+
+`input/` 폴더와 쓰기 권한 확인. 업로드 그림이 없는 호출도 따로 처리하지 않음
+
+<a id="layout18-table-14-row-4"></a>
+
+**PDF 글꼴 오류**
+
+**증상·제약**
+
+PDF 글꼴 오류
+
+**원인과 확인할 지점**
+
+실제 한글 폰트 파일과 FPDF 패키지 구성을 확인
+
+<a id="layout18-table-14-row-5"></a>
+
+**메시지가 API 오류 문구임**
+
+**증상·제약**
+
+메시지가 API 오류 문구임
+
+**원인과 확인할 지점**
+
+예외가 메시지 문자열로 반환되며 그대로 PDF에 들어갈 수 있음. 정상 생성 결과와 구분
+
+<a id="layout18-table-14-row-6"></a>
+
+**이전 그림·PDF가 바뀜**
+
+**증상·제약**
+
+이전 그림·PDF가 바뀜
+
+**원인과 확인할 지점**
+
+임시 그림과 PDF가 고정 파일명입니다. 필요한 결과는 다음 실행 전에 별도 보관
+
+<a id="layout18-table-14-row-7"></a>
+
+**여러 사용자의 결과가 섞일 수 있음**
+
+**증상·제약**
+
+여러 사용자의 결과가 섞일 수 있음
+
+**원인과 확인할 지점**
+
+요청별 파일명·저장공간·동시성 분리가 없는 기본 프로토타입
+
+<a id="layout18-table-14-row-8"></a>
+
+**이전 대화나 그림이 질문에 반영되지 않음**
+
+**증상·제약**
+
+이전 대화나 그림이 질문에 반영되지 않음
+
+**원인과 확인할 지점**
+
+`ask_gpt()`는 입력 질문 한 건을 독립 요청으로 전달
+
+<a id="layout18-table-14-row-9"></a>
+
+**학습이 이어진다고 표시되지만 재개가 불명확함**
+
+**증상·제약**
+
+학습이 이어진다고 표시되지만 재개가 불명확함
+
+**원인과 확인할 지점**
+
+`resume_flag`의 계산과 실제 `model.train()` 인자가 연결돼 있지 않음
+
 
 <a id="-구성과-변경-기록"></a>
 
