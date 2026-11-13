@@ -4,9 +4,9 @@
 **읽기 수준 선택** · [LEVEL 1 - Beginner](%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A81.md) · [LEVEL 2 - Explorer](%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A82.md) · [LEVEL 3 - Practitioner](%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A83.md) · [LEVEL 4 - Advanced](%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A84.md) · [LEVEL 5 - Expert](%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A85.md)
 <!-- reading-levels17:end -->
 
-| 차수·위치 | 현재 파일 | 추가 경로 | 내용 변경 | 이전에만 존재 |
-|---|---:|---:|---:|---:|
-| `기본` | 17 | 17 | 0 | 0 |
+| 항목별 수치 |
+| --- |
+| **차수·위치**<br>`기본`<br><br>**현재 파일**<br>17<br><br>**추가 경로**<br>17<br><br>**내용 변경**<br>0<br><br>**이전에만 존재**<br>0 |
 
 - 현재 연구 파일 합계: **17개**. 루트 `README.md`, `CHANGELOG.md`, `.gitignore`와 `docs/` 관리 문서는 집계에서 제외합니다.
 - 자료 위치별 파일 구성과 변경 내역을 정리했습니다.
@@ -17,7 +17,7 @@
 
 ## 자료별 의미와 근거
 
-| 자료 · 실제 경로 · 목적과 내용 · 근거 |
+| 내용 |
 | --- |
 | **자료**<br>[기본](versions/stage-1.md)<br><br>**실제 경로**<br>`app.py`<br><br>**목적과 내용**<br>YOLO 그림 탐지, 텍스트 질문, PDF 기록을 연결하는 기본 앱입니다.<br><br>**근거**<br>[자료](../app.py) |
 
@@ -27,7 +27,7 @@
 
 ## 연구·개발 자료
 
-| 자료와 안내 · 자료의 성격 · 구체적인 차이와 연결 |
+| 내용 |
 | --- |
 | **자료와 안내**<br>[기본](versions/stage-1.md)<br><br>**자료의 성격**<br>앱 코드<br><br>**구체적인 차이와 연결**<br>그림 분석과 대화 기능을 구현한 기본 앱입니다. |
 

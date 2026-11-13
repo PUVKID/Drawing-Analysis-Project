@@ -2607,7 +2607,7 @@ input/temp.jpg·result/report.pdf가 고정되어 이전 결과를 덮어씁니�
 
 ## 기능
 
-| 기능 · 실제 처리 · 확인할 파일 |
+| 내용 |
 | --- |
 | **기능**<br>그림 분석<br><br>**실제 처리**<br>RGB 입력을 BGR로 바꾸어 임시 JPEG로 저장하고 YOLO 추론<br><br>**확인할 파일**<br>[app.py](../../app.py)의 `analyze_and_suggest()` |
 | **기능**<br>탐지 요약<br><br>**실제 처리**<br>첫 추론 결과의 검출 상자가 있는지 확인해 성공·실패와 시각 기록<br><br>**확인할 파일**<br>[app.py](../../app.py)의 `has_det`, `analysis_summary` |

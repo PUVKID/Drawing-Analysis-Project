@@ -8,7 +8,7 @@
 **YOLO 탐지 결과를 GPT 대화와 그림 분석 PDF로 연결합니다.**
 
 <!-- reading-levels17:start -->
-| 읽기 수준 · 안내 내용 |
+| 내용 |
 | --- |
 | **읽기 수준**<br>[LEVEL 1 - Beginner](docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A81.md)<br><br>**안내 내용**<br>낯선 용어를 풀고 입력부터 결과까지 구체적인 예로 읽기 |
 | **읽기 수준**<br>[LEVEL 2 - Explorer](docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A82.md)<br><br>**안내 내용**<br>핵심 개념과 처리 흐름의 관계 이해 |
@@ -90,7 +90,7 @@ YOLO 탐지 여부 요약을 GPT-4o-mini 텍스트 요청에 연결
 
 ## 전체 차수
 
-| 차수·단계 · 주요 내용 · 자료 · 직전 비교 |
+| 내용 |
 | --- |
 | **차수·단계**<br>[기본](docs/versions/stage-1.md)<br><br>**주요 내용**<br>그림 탐지·텍스트 대화·PDF와 데이터 생성·학습 보조를 연결한 기본 구성입니다.<br><br>**자료**<br>[폴더](docs)<br><br>**직전 비교**<br>[전체 비교](docs/VERSIONS.md) |
 
@@ -500,7 +500,7 @@ API 호출 오류
 
 ## 자료 폴더와 차수별 변화
 
-| 자료 · 자료 폴더 · 설명 · 비교·구성 |
+| 내용 |
 | --- |
 | **자료**<br>기본<br><br>**자료 폴더**<br>[자료 폴더](docs)<br><br>**설명**<br>[내용](docs/versions/stage-1.md)<br><br>**비교·구성**<br>[비교·구성](docs/VERSIONS.md) |
 
@@ -528,7 +528,7 @@ API 호출 오류
 
 ## 기능
 
-| 기능 · 실제 처리 · 확인할 파일 |
+| 내용 |
 | --- |
 | **기능**<br>그림 분석<br><br>**실제 처리**<br>RGB 입력을 BGR로 바꾸어 임시 JPEG로 저장하고 YOLO 추론<br><br>**확인할 파일**<br>[app.py](app.py)의 `analyze_and_suggest()` |
 | **기능**<br>탐지 요약<br><br>**실제 처리**<br>첫 추론 결과의 검출 상자가 있는지 확인해 성공·실패와 시각 기록<br><br>**확인할 파일**<br>[app.py](app.py)의 `has_det`, `analysis_summary` |
