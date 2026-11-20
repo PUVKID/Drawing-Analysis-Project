@@ -175,7 +175,7 @@
 | <a id="layout18-table-7-row-3"></a> 그림 저장 실패 | `input/` 폴더와 쓰기 권한 확인.<br>업로드 그림이 없는 호출도 따로 처리하지 않음 |
 | <a id="layout18-table-7-row-4"></a> PDF 글꼴 오류 | 실제 한글 폰트 파일과 FPDF 패키지 구성을 확인 |
 | <a id="layout18-table-7-row-5"></a> 메시지가 API 오류 문구임 | 예외가 메시지 문자열로 반환되며 그대로 PDF에 들어갈 수 있음.<br>정상 생성 결과와 구분 |
-| <a id="layout18-table-7-row-6"></a> 이전 그림·PDF가 바뀜 | 임시 그림과 PDF가 고정 파일 명입니다.<br>필요한 결과는 다음 실행 전에 별도 보관 |
+| <a id="layout18-table-7-row-6"></a> 이전 그림·PDF가 바뀜 | 임시 그림과 PDF가 고정 파일명입니다.<br>필요한 결과는 다음 실행 전에 별도 보관 |
 | <a id="layout18-table-7-row-7"></a> 여러 사용자의 결과가 섞일 수 있음 | 요청별 파일명·저장공간·동시성 분리가 없는 기본 프로토타입 |
 | <a id="layout18-table-7-row-8"></a> 이전 대화나 그림이 질문에 반영되지 않음 | `ask_gpt()`는 입력 질문 한 건을 독립 요청으로 전달 |
 | <a id="layout18-table-7-row-9"></a> 학습이 이어진다고 표시되지만 재개가 불명확함 | `resume_flag`의 계산과 실제 `model.train()` 인자가 연결돼 있지 않음 |
@@ -355,7 +355,7 @@ app.py의 analyze_and_suggest가 그림을 저장하고 YOLO를 호출합니다.
 | <a id="layout18-table-14-row-3"></a> 그림 저장 실패 | `input/` 폴더와 쓰기 권한 확인.<br>업로드 그림이 없는 호출도 따로 처리하지 않음 |
 | <a id="layout18-table-14-row-4"></a> PDF 글꼴 오류 | 실제 한글 폰트 파일과 FPDF 패키지 구성을 확인 |
 | <a id="layout18-table-14-row-5"></a> 메시지가 API 오류 문구임 | 예외가 메시지 문자열로 반환되며 그대로 PDF에 들어갈 수 있음.<br>정상 생성 결과와 구분 |
-| <a id="layout18-table-14-row-6"></a> 이전 그림·PDF가 바뀜 | 임시 그림과 PDF가 고정 파일 명입니다.<br>필요한 결과는 다음 실행 전에 별도 보관 |
+| <a id="layout18-table-14-row-6"></a> 이전 그림·PDF가 바뀜 | 임시 그림과 PDF가 고정 파일명입니다.<br>필요한 결과는 다음 실행 전에 별도 보관 |
 | <a id="layout18-table-14-row-7"></a> 여러 사용자의 결과가 섞일 수 있음 | 요청별 파일명·저장공간·동시성 분리가 없는 기본 프로토타입 |
 | <a id="layout18-table-14-row-8"></a> 이전 대화나 그림이 질문에 반영되지 않음 | `ask_gpt()`는 입력 질문 한 건을 독립 요청으로 전달 |
 | <a id="layout18-table-14-row-9"></a> 학습이 이어진다고 표시되지만 재개가 불명확함 | `resume_flag`의 계산과 실제 `model.train()` 인자가 연결돼 있지 않음 |
@@ -535,7 +535,7 @@ app.py 실행 조건을 준비한 뒤 두 요청과 PDF 경로를 따로 검토�
 | <a id="layout18-table-21-row-3"></a> 그림 저장 실패 | `input/` 폴더와 쓰기 권한 확인.<br>업로드 그림이 없는 호출도 따로 처리하지 않음 |
 | <a id="layout18-table-21-row-4"></a> PDF 글꼴 오류 | 실제 한글 폰트 파일과 FPDF 패키지 구성을 확인 |
 | <a id="layout18-table-21-row-5"></a> 메시지가 API 오류 문구임 | 예외가 메시지 문자열로 반환되며 그대로 PDF에 들어갈 수 있음.<br>정상 생성 결과와 구분 |
-| <a id="layout18-table-21-row-6"></a> 이전 그림·PDF가 바뀜 | 임시 그림과 PDF가 고정 파일 명입니다.<br>필요한 결과는 다음 실행 전에 별도 보관 |
+| <a id="layout18-table-21-row-6"></a> 이전 그림·PDF가 바뀜 | 임시 그림과 PDF가 고정 파일명입니다.<br>필요한 결과는 다음 실행 전에 별도 보관 |
 | <a id="layout18-table-21-row-7"></a> 여러 사용자의 결과가 섞일 수 있음 | 요청별 파일명·저장공간·동시성 분리가 없는 기본 프로토타입 |
 | <a id="layout18-table-21-row-8"></a> 이전 대화나 그림이 질문에 반영되지 않음 | `ask_gpt()`는 입력 질문 한 건을 독립 요청으로 전달 |
 | <a id="layout18-table-21-row-9"></a> 학습이 이어진다고 표시되지만 재개가 불명확함 | `resume_flag`의 계산과 실제 `model.train()` 인자가 연결돼 있지 않음 |
@@ -715,7 +715,7 @@ app.py 실행 조건을 준비한 뒤 두 요청과 PDF 경로를 따로 검토�
 | <a id="layout18-table-28-row-3"></a> 그림 저장 실패 | `input/` 폴더와 쓰기 권한 확인.<br>업로드 그림이 없는 호출도 따로 처리하지 않음 |
 | <a id="layout18-table-28-row-4"></a> PDF 글꼴 오류 | 실제 한글 폰트 파일과 FPDF 패키지 구성을 확인 |
 | <a id="layout18-table-28-row-5"></a> 메시지가 API 오류 문구임 | 예외가 메시지 문자열로 반환되며 그대로 PDF에 들어갈 수 있음.<br>정상 생성 결과와 구분 |
-| <a id="layout18-table-28-row-6"></a> 이전 그림·PDF가 바뀜 | 임시 그림과 PDF가 고정 파일 명입니다.<br>필요한 결과는 다음 실행 전에 별도 보관 |
+| <a id="layout18-table-28-row-6"></a> 이전 그림·PDF가 바뀜 | 임시 그림과 PDF가 고정 파일명입니다.<br>필요한 결과는 다음 실행 전에 별도 보관 |
 | <a id="layout18-table-28-row-7"></a> 여러 사용자의 결과가 섞일 수 있음 | 요청별 파일명·저장공간·동시성 분리가 없는 기본 프로토타입 |
 | <a id="layout18-table-28-row-8"></a> 이전 대화나 그림이 질문에 반영되지 않음 | `ask_gpt()`는 입력 질문 한 건을 독립 요청으로 전달 |
 | <a id="layout18-table-28-row-9"></a> 학습이 이어진다고 표시되지만 재개가 불명확함 | `resume_flag`의 계산과 실제 `model.train()` 인자가 연결돼 있지 않음 |
@@ -1009,7 +1009,7 @@ python -m venv .venv
 | <a id="layout18-table-39-row-3"></a> 그림 저장 실패 | `input/` 폴더와 쓰기 권한 확인.<br>업로드 그림이 없는 호출도 따로 처리하지 않음 |
 | <a id="layout18-table-39-row-4"></a> PDF 글꼴 오류 | 실제 한글 폰트 파일과 FPDF 패키지 구성을 확인 |
 | <a id="layout18-table-39-row-5"></a> 메시지가 API 오류 문구임 | 예외가 메시지 문자열로 반환되며 그대로 PDF에 들어갈 수 있음.<br>정상 생성 결과와 구분 |
-| <a id="layout18-table-39-row-6"></a> 이전 그림·PDF가 바뀜 | 임시 그림과 PDF가 고정 파일 명입니다.<br>필요한 결과는 다음 실행 전에 별도 보관 |
+| <a id="layout18-table-39-row-6"></a> 이전 그림·PDF가 바뀜 | 임시 그림과 PDF가 고정 파일명입니다.<br>필요한 결과는 다음 실행 전에 별도 보관 |
 | <a id="layout18-table-39-row-7"></a> 여러 사용자의 결과가 섞일 수 있음 | 요청별 파일명·저장공간·동시성 분리가 없는 기본 프로토타입 |
 | <a id="layout18-table-39-row-8"></a> 이전 대화나 그림이 질문에 반영되지 않음 | `ask_gpt()`는 입력 질문 한 건을 독립 요청으로 전달 |
 | <a id="layout18-table-39-row-9"></a> 학습이 이어진다고 표시되지만 재개가 불명확함 | `resume_flag`의 계산과 실제 `model.train()` 인자가 연결돼 있지 않음 |
