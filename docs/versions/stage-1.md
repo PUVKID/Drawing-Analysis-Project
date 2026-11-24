@@ -5,11 +5,11 @@
 <!-- reading-levels17:start -->
 | 읽기 수준 | 설명의 초점 |
 | --- | --- |
-| [LEVEL 1 · Beginner](#reading-level-1) | 목적과 동작부터 |
-| [LEVEL 2 · Explorer](#reading-level-2) | 구성과 연결 원리 |
-| [LEVEL 3 · Practitioner](#reading-level-3) | 준비·실행·결과 확인 |
-| [LEVEL 4 · Advanced](#reading-level-4) | 구현·설계·실패 처리 |
-| [LEVEL 5 · Expert](#reading-level-5) | 근거·프로토콜·한계 검토 |
+| [LEVEL 1 · Beginner](#user-content-reading-level-1) | 목적과 동작부터 |
+| [LEVEL 2 · Explorer](#user-content-reading-level-2) | 구성과 연결 원리 |
+| [LEVEL 3 · Practitioner](#user-content-reading-level-3) | 준비·실행·결과 확인 |
+| [LEVEL 4 · Advanced](#user-content-reading-level-4) | 구현·설계·실패 처리 |
+| [LEVEL 5 · Expert](#user-content-reading-level-5) | 근거·프로토콜·한계 검토 |
 
 <details open>
 <summary>LEVEL 1 · Beginner — 목적과 동작부터</summary>
@@ -192,7 +192,7 @@
 
 그림과 질문의 이전 내용이 자동으로 이어지지 않습니다. API 키·가중치·폰트 같은 준비물도 필요합니다. 이 앱의 출력으로 심리 진단이나 치료 효과를 판단하지 않습니다.
 
-[표·코드·실행 설정·파일 전체 비교를 포함한 공통 상세](#reading-level-5)
+[표·코드·실행 설정·파일 전체 비교를 포함한 공통 상세](#user-content-reading-level-5)
 
 
 </details>
@@ -378,7 +378,7 @@ app.py의 analyze_and_suggest가 그림을 저장하고 YOLO를 호출합니다.
 
 원본 그림과 상세 좌표가 언어 모델에 전달되지 않는 한계를 기억합니다. 고정 저장 이름과 예외 표시도 확인해야 합니다. 앱에서 보이는 완성된 PDF가 독립 평가 자료를 뜻하지는 않습니다.
 
-[표·코드·실행 설정·파일 전체 비교를 포함한 공통 상세](#reading-level-5)
+[표·코드·실행 설정·파일 전체 비교를 포함한 공통 상세](#user-content-reading-level-5)
 
 
 </details>
@@ -564,7 +564,7 @@ app.py 실행 조건을 준비한 뒤 두 요청과 PDF 경로를 따로 검토�
 
 실행 조건 부재·외부 요청 실패·자료 재사용을 분리해 기록합니다. 설정을 확인하지 않은 미세조정 호출을 수행하지 않습니다. 실제 개인 상담 자료나 인증값을 공개 산출물에 넣지 않습니다.
 
-[표·코드·실행 설정·파일 전체 비교를 포함한 공통 상세](#reading-level-5)
+[표·코드·실행 설정·파일 전체 비교를 포함한 공통 상세](#user-content-reading-level-5)
 
 
 </details>
@@ -750,7 +750,7 @@ app.py 실행 조건을 준비한 뒤 두 요청과 PDF 경로를 따로 검토�
 
 문맥 손실·동시 저장 충돌·외부 의존성·평가 누수가 설계 검토 지점입니다. 고정 이름과 비분리 요청은 기능 범위의 제한이며, 이를 숨기고 다중 사용자 상담 시스템으로 설명하지 않습니다.
 
-[표·코드·실행 설정·파일 전체 비교를 포함한 공통 상세](#reading-level-5)
+[표·코드·실행 설정·파일 전체 비교를 포함한 공통 상세](#user-content-reading-level-5)
 
 
 </details>
