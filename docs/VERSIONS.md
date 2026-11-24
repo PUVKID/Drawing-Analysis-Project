@@ -2,7 +2,7 @@
 
 <!-- reading-levels17:start -->
 <details>
-<summary><strong>읽기 수준 선택</strong></summary>
+<summary>읽기 수준 선택</summary>
 
 | 레벨 | 읽는 목적 |
 | --- | --- |
@@ -32,7 +32,7 @@
 | --- | --- | --- | --- |
 | [기본](versions/stage-1.md) | `app.py` | YOLO 그림 탐지, 텍스트 질문, PDF 기록을 연결하는 기본 앱입니다. | [자료](../app.py) |
 
-**연구 자료와 관련 코드를 경로별로 정리했습니다.**
+연구 자료와 관련 코드를 경로별로 정리했습니다.
 
 <a id="-연구개발-자료"></a>
 
