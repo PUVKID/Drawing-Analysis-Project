@@ -30,7 +30,7 @@
 | <a id="layout18-table-1-row-1"></a> 그림 입력과 추론 | app.py는 RGB 그림을 BGR 임시 JPEG로 저장하고 YOLO를 conf =0.05·imgsz640으로 실행합니다.<br>검출 상자 한 개 이상이면 탐지 성공으로 요약합니다. |
 | <a id="layout18-table-1-row-2"></a> 언어 모델 요청 | gpt-4o-mini에 보내는 것은 탐지 성공/실패와 분석 시각의 텍스트입니다.<br>그림 바이트·객체 좌표를 보내는 멀티 모달 요청이 아니며 10~15 문장 코멘트를 요청합니다. |
 | <a id="layout18-table-1-row-3"></a> 화면과 PDF | 결과 RGB 그림은 입력 그림을 돌려 준 것이며 검출 상자를 새로 그리지 않습니다.<br>FPDF가 시각·요약·메시지·입력 그림을 A4 PDF로 묶습니다. |
-| <a id="layout18-table-1-row-4"></a> 별도 질문과 API | 오른쪽 ask_gpt는 질문 한 건만 보내며 이전 대화·그림 분석을 자동 포함하지 않습니다. fastAPI.py의/gpt POST는 별도 진입 점으로 SDK 방식·모델 이름도 별도로 확인합니다. |
+| <a id="layout18-table-1-row-4"></a> 별도 질문과 API | 오른쪽 ask_gpt는 질문 한 건만 보내며 이전 대화·그림 분석을 자동 포함하지 않습니다. fastAPI.py의/gpt POST는 별도 진입점으로 SDK 방식·모델 이름도 별도로 확인합니다. |
 | <a id="layout18-table-1-row-5"></a> 단일 그림 검사 | train_result_check.py의 conf =0.25 는 기본 앱의 0.05와 다릅니다.<br>한 장의 추론 결과를 전체 시험 성능이나 심리 이해 성공으로 바꾸지 않습니다. |
 
 
@@ -43,7 +43,7 @@
 | 조건·자료 | 의미와 확인 방법 |
 | --- | --- |
 | <a id="layout18-table-2-row-1"></a> 저장소 루트에서 실행 | Python 환경과 gradio·ultralytics·opencv-python·fpdf2·openai를 준비합니다.<br>실행 프로세스가 OPENAI_API_KEY를 읽을 수 있어야합니다. |
-| <a id="layout18-table-2-row-2"></a> 가중치·작업·폰트 | app.py의 YOLO_MODEL_PATH·PROJECT_DIR·FONT_PATH를 실제 경로로 맞춥니다.<br>기본 가중치 위치는 drawing_yolo_run/v8 _finetune/weights/last.pt이며 한글 폰트가 별도로 필요합니다. |
+| <a id="layout18-table-2-row-2"></a> 가중치·작업·폰트 | app.py의 YOLO_MODEL_PATH·PROJECT_DIR·FONT_PATH를 실제 경로로 맞춥니다.<br>기본 가중치 위치는 drawing_yolo_run/v8_finetune/weights/last.pt이며 한글 폰트가 별도로 필요합니다. |
 | <a id="layout18-table-2-row-3"></a> 입력 수동·출력 자동 | input/은 먼저 준비해야 합니다.<br>업로드는 input/temp.jpg에 저장하고 result/는 코드가 생성해 result/report.pdf를 씁니다.<br>폴더 존재와 쓰기 권한을 확인합니다. |
 | <a id="layout18-table-2-row-4"></a> config.py와 앱 설정 | config.py에 환경 변수 설정이 있어도 기본 app.py는 그 모듈을 가져오지 않고 자체 경로를 씁니다.<br>환경 변수 이름만 바꾸면 모든 앱 경로가 바뀐다고 생각하지 않습니다. |
 | <a id="layout18-table-2-row-5"></a> 실행과 결과 보관 | 원문의 가상 환경 준비·app.py 실행 명령을 저장소 루트에서 사용합니다.<br>Gradio 주소를 연 뒤 결과를 확인하고 필요한 그림/PDF 는 다음 실행 전에 별도로 보관합니다. |
@@ -148,7 +148,7 @@
 
 `fastAPI.py`의 `/gpt`는 기본 Gradio 앱과 별도 진입점이며 코드의 SDK 호출 방식과 모델 이름도 다릅니다. 서버를 운영하거나 미세조정 요청을 제출하기 전 해당 파일의 패키지 호환성과 서비스 접근 권한을 확인합니다.
 
-먼저 실행 안 내에서 필요한 가중치·폰트·API 설정을 확인합니다. 그림 버튼과 질문 버튼이 각각 무엇을 보내는지 읽은 뒤 결과와 PDF를 확인합니다. 개인 그림이나 키를 공개 자료에 넣지 않습니다.
+먼저 실행 안내에서 필요한 가중치·폰트·API 설정을 확인합니다. 그림 버튼과 질문 버튼이 각각 무엇을 보내는지 읽은 뒤 결과와 PDF를 확인합니다. 개인 그림이나 키를 공개 자료에 넣지 않습니다.
 
 ### LEVEL 1 · 결과를 확인하는 방법
 
@@ -164,7 +164,7 @@
 
 관련 논문과 평가 노트북은 [미술치료 대화 프로젝트](https://github.com/PUVKID/Art-Therapy-Dialogue-Project)에서 구분해 확인할 수 있습니다.
 
-문장이 자연스러워도 실제 마음 상태를 맞췄다는 뜻은 아닙니다. PDF는 앱이 만든 출력 물을 모은 문서입니다. 탐지나 생성의 작동 확인과 진단·치료 효과 검증은 다릅니다.
+문장이 자연스러워도 실제 마음 상태를 맞췄다는 뜻은 아닙니다. PDF는 앱이 만든 출력물을 모은 문서입니다. 탐지나 생성의 작동 확인과 진단·치료 효과 검증은 다릅니다.
 
 ### LEVEL 1 · 주의할 범위
 
@@ -210,7 +210,7 @@
 | <a id="layout18-table-8-row-1"></a> 그림 입력과 추론 | app.py는 RGB 그림을 BGR 임시 JPEG로 저장하고 YOLO를 conf =0.05·imgsz640으로 실행합니다.<br>검출 상자 한 개 이상이면 탐지 성공으로 요약합니다. |
 | <a id="layout18-table-8-row-2"></a> 언어 모델 요청 | gpt-4o-mini에 보내는 것은 탐지 성공/실패와 분석 시각의 텍스트입니다.<br>그림 바이트·객체 좌표를 보내는 멀티 모달 요청이 아니며 10~15 문장 코멘트를 요청합니다. |
 | <a id="layout18-table-8-row-3"></a> 화면과 PDF | 결과 RGB 그림은 입력 그림을 돌려 준 것이며 검출 상자를 새로 그리지 않습니다.<br>FPDF가 시각·요약·메시지·입력 그림을 A4 PDF로 묶습니다. |
-| <a id="layout18-table-8-row-4"></a> 별도 질문과 API | 오른쪽 ask_gpt는 질문 한 건만 보내며 이전 대화·그림 분석을 자동 포함하지 않습니다. fastAPI.py의/gpt POST는 별도 진입 점으로 SDK 방식·모델 이름도 별도로 확인합니다. |
+| <a id="layout18-table-8-row-4"></a> 별도 질문과 API | 오른쪽 ask_gpt는 질문 한 건만 보내며 이전 대화·그림 분석을 자동 포함하지 않습니다. fastAPI.py의/gpt POST는 별도 진입점으로 SDK 방식·모델 이름도 별도로 확인합니다. |
 | <a id="layout18-table-8-row-5"></a> 단일 그림 검사 | train_result_check.py의 conf =0.25 는 기본 앱의 0.05와 다릅니다.<br>한 장의 추론 결과를 전체 시험 성능이나 심리 이해 성공으로 바꾸지 않습니다. |
 
 
@@ -223,7 +223,7 @@
 | 조건·자료 | 의미와 확인 방법 |
 | --- | --- |
 | <a id="layout18-table-9-row-1"></a> 저장소 루트에서 실행 | Python 환경과 gradio·ultralytics·opencv-python·fpdf2·openai를 준비합니다.<br>실행 프로세스가 OPENAI_API_KEY를 읽을 수 있어야합니다. |
-| <a id="layout18-table-9-row-2"></a> 가중치·작업·폰트 | app.py의 YOLO_MODEL_PATH·PROJECT_DIR·FONT_PATH를 실제 경로로 맞춥니다.<br>기본 가중치 위치는 drawing_yolo_run/v8 _finetune/weights/last.pt이며 한글 폰트가 별도로 필요합니다. |
+| <a id="layout18-table-9-row-2"></a> 가중치·작업·폰트 | app.py의 YOLO_MODEL_PATH·PROJECT_DIR·FONT_PATH를 실제 경로로 맞춥니다.<br>기본 가중치 위치는 drawing_yolo_run/v8_finetune/weights/last.pt이며 한글 폰트가 별도로 필요합니다. |
 | <a id="layout18-table-9-row-3"></a> 입력 수동·출력 자동 | input/은 먼저 준비해야 합니다.<br>업로드는 input/temp.jpg에 저장하고 result/는 코드가 생성해 result/report.pdf를 씁니다.<br>폴더 존재와 쓰기 권한을 확인합니다. |
 | <a id="layout18-table-9-row-4"></a> config.py와 앱 설정 | config.py에 환경 변수 설정이 있어도 기본 app.py는 그 모듈을 가져오지 않고 자체 경로를 씁니다.<br>환경 변수 이름만 바꾸면 모든 앱 경로가 바뀐다고 생각하지 않습니다. |
 | <a id="layout18-table-9-row-5"></a> 실행과 결과 보관 | 원문의 가상 환경 준비·app.py 실행 명령을 저장소 루트에서 사용합니다.<br>Gradio 주소를 연 뒤 결과를 확인하고 필요한 그림/PDF 는 다음 실행 전에 별도로 보관합니다. |
@@ -390,7 +390,7 @@ app.py 진입점에서 640/0.05를 확인하고 왼쪽 그림 분석의 세 출�
 | <a id="layout18-table-15-row-1"></a> 그림 입력과 추론 | app.py는 RGB 그림을 BGR 임시 JPEG로 저장하고 YOLO를 conf =0.05·imgsz640으로 실행합니다.<br>검출 상자 한 개 이상이면 탐지 성공으로 요약합니다. |
 | <a id="layout18-table-15-row-2"></a> 언어 모델 요청 | gpt-4o-mini에 보내는 것은 탐지 성공/실패와 분석 시각의 텍스트입니다.<br>그림 바이트·객체 좌표를 보내는 멀티 모달 요청이 아니며 10~15 문장 코멘트를 요청합니다. |
 | <a id="layout18-table-15-row-3"></a> 화면과 PDF | 결과 RGB 그림은 입력 그림을 돌려 준 것이며 검출 상자를 새로 그리지 않습니다.<br>FPDF가 시각·요약·메시지·입력 그림을 A4 PDF로 묶습니다. |
-| <a id="layout18-table-15-row-4"></a> 별도 질문과 API | 오른쪽 ask_gpt는 질문 한 건만 보내며 이전 대화·그림 분석을 자동 포함하지 않습니다. fastAPI.py의/gpt POST는 별도 진입 점으로 SDK 방식·모델 이름도 별도로 확인합니다. |
+| <a id="layout18-table-15-row-4"></a> 별도 질문과 API | 오른쪽 ask_gpt는 질문 한 건만 보내며 이전 대화·그림 분석을 자동 포함하지 않습니다. fastAPI.py의/gpt POST는 별도 진입점으로 SDK 방식·모델 이름도 별도로 확인합니다. |
 | <a id="layout18-table-15-row-5"></a> 단일 그림 검사 | train_result_check.py의 conf =0.25 는 기본 앱의 0.05와 다릅니다.<br>한 장의 추론 결과를 전체 시험 성능이나 심리 이해 성공으로 바꾸지 않습니다. |
 
 
@@ -403,7 +403,7 @@ app.py 진입점에서 640/0.05를 확인하고 왼쪽 그림 분석의 세 출�
 | 조건·자료 | 의미와 확인 방법 |
 | --- | --- |
 | <a id="layout18-table-16-row-1"></a> 저장소 루트에서 실행 | Python 환경과 gradio·ultralytics·opencv-python·fpdf2·openai를 준비합니다.<br>실행 프로세스가 OPENAI_API_KEY를 읽을 수 있어야합니다. |
-| <a id="layout18-table-16-row-2"></a> 가중치·작업·폰트 | app.py의 YOLO_MODEL_PATH·PROJECT_DIR·FONT_PATH를 실제 경로로 맞춥니다.<br>기본 가중치 위치는 drawing_yolo_run/v8 _finetune/weights/last.pt이며 한글 폰트가 별도로 필요합니다. |
+| <a id="layout18-table-16-row-2"></a> 가중치·작업·폰트 | app.py의 YOLO_MODEL_PATH·PROJECT_DIR·FONT_PATH를 실제 경로로 맞춥니다.<br>기본 가중치 위치는 drawing_yolo_run/v8_finetune/weights/last.pt이며 한글 폰트가 별도로 필요합니다. |
 | <a id="layout18-table-16-row-3"></a> 입력 수동·출력 자동 | input/은 먼저 준비해야 합니다.<br>업로드는 input/temp.jpg에 저장하고 result/는 코드가 생성해 result/report.pdf를 씁니다.<br>폴더 존재와 쓰기 권한을 확인합니다. |
 | <a id="layout18-table-16-row-4"></a> config.py와 앱 설정 | config.py에 환경 변수 설정이 있어도 기본 app.py는 그 모듈을 가져오지 않고 자체 경로를 씁니다.<br>환경 변수 이름만 바꾸면 모든 앱 경로가 바뀐다고 생각하지 않습니다. |
 | <a id="layout18-table-16-row-5"></a> 실행과 결과 보관 | 원문의 가상 환경 준비·app.py 실행 명령을 저장소 루트에서 사용합니다.<br>Gradio 주소를 연 뒤 결과를 확인하고 필요한 그림/PDF 는 다음 실행 전에 별도로 보관합니다. |
@@ -570,7 +570,7 @@ app.py 실행 조건을 준비한 뒤 두 요청과 PDF 경로를 따로 검토�
 | <a id="layout18-table-22-row-1"></a> 그림 입력과 추론 | app.py는 RGB 그림을 BGR 임시 JPEG로 저장하고 YOLO를 conf =0.05·imgsz640으로 실행합니다.<br>검출 상자 한 개 이상이면 탐지 성공으로 요약합니다. |
 | <a id="layout18-table-22-row-2"></a> 언어 모델 요청 | gpt-4o-mini에 보내는 것은 탐지 성공/실패와 분석 시각의 텍스트입니다.<br>그림 바이트·객체 좌표를 보내는 멀티 모달 요청이 아니며 10~15 문장 코멘트를 요청합니다. |
 | <a id="layout18-table-22-row-3"></a> 화면과 PDF | 결과 RGB 그림은 입력 그림을 돌려 준 것이며 검출 상자를 새로 그리지 않습니다.<br>FPDF가 시각·요약·메시지·입력 그림을 A4 PDF로 묶습니다. |
-| <a id="layout18-table-22-row-4"></a> 별도 질문과 API | 오른쪽 ask_gpt는 질문 한 건만 보내며 이전 대화·그림 분석을 자동 포함하지 않습니다. fastAPI.py의/gpt POST는 별도 진입 점으로 SDK 방식·모델 이름도 별도로 확인합니다. |
+| <a id="layout18-table-22-row-4"></a> 별도 질문과 API | 오른쪽 ask_gpt는 질문 한 건만 보내며 이전 대화·그림 분석을 자동 포함하지 않습니다. fastAPI.py의/gpt POST는 별도 진입점으로 SDK 방식·모델 이름도 별도로 확인합니다. |
 | <a id="layout18-table-22-row-5"></a> 단일 그림 검사 | train_result_check.py의 conf =0.25 는 기본 앱의 0.05와 다릅니다.<br>한 장의 추론 결과를 전체 시험 성능이나 심리 이해 성공으로 바꾸지 않습니다. |
 
 
@@ -578,12 +578,12 @@ app.py 실행 조건을 준비한 뒤 두 요청과 PDF 경로를 따로 검토�
 
 ### LEVEL 4 · 실행 경로와 준비물
 
-모듈 초기화 인증과 상대 경로 해석은 실행 cwd에 영향을 받습니다. config의 정의와 실제 import 경로를 구분하고 기본 Gradio와 별도 API 진입 점의 의존성을 따로 확인해야 합니다. 사용자별 저장 분리는 현재 구성에 없습니다.
+모듈 초기화 인증과 상대 경로 해석은 실행 cwd에 영향을 받습니다. config의 정의와 실제 import 경로를 구분하고 기본 Gradio와 별도 API 진입점의 의존성을 따로 확인해야 합니다. 사용자별 저장 분리는 현재 구성에 없습니다.
 
 | 조건·자료 | 의미와 확인 방법 |
 | --- | --- |
 | <a id="layout18-table-23-row-1"></a> 저장소 루트에서 실행 | Python 환경과 gradio·ultralytics·opencv-python·fpdf2·openai를 준비합니다.<br>실행 프로세스가 OPENAI_API_KEY를 읽을 수 있어야합니다. |
-| <a id="layout18-table-23-row-2"></a> 가중치·작업·폰트 | app.py의 YOLO_MODEL_PATH·PROJECT_DIR·FONT_PATH를 실제 경로로 맞춥니다.<br>기본 가중치 위치는 drawing_yolo_run/v8 _finetune/weights/last.pt이며 한글 폰트가 별도로 필요합니다. |
+| <a id="layout18-table-23-row-2"></a> 가중치·작업·폰트 | app.py의 YOLO_MODEL_PATH·PROJECT_DIR·FONT_PATH를 실제 경로로 맞춥니다.<br>기본 가중치 위치는 drawing_yolo_run/v8_finetune/weights/last.pt이며 한글 폰트가 별도로 필요합니다. |
 | <a id="layout18-table-23-row-3"></a> 입력 수동·출력 자동 | input/은 먼저 준비해야 합니다.<br>업로드는 input/temp.jpg에 저장하고 result/는 코드가 생성해 result/report.pdf를 씁니다.<br>폴더 존재와 쓰기 권한을 확인합니다. |
 | <a id="layout18-table-23-row-4"></a> config.py와 앱 설정 | config.py에 환경 변수 설정이 있어도 기본 app.py는 그 모듈을 가져오지 않고 자체 경로를 씁니다.<br>환경 변수 이름만 바꾸면 모든 앱 경로가 바뀐다고 생각하지 않습니다. |
 | <a id="layout18-table-23-row-5"></a> 실행과 결과 보관 | 원문의 가상 환경 준비·app.py 실행 명령을 저장소 루트에서 사용합니다.<br>Gradio 주소를 연 뒤 결과를 확인하고 필요한 그림/PDF 는 다음 실행 전에 별도로 보관합니다. |
@@ -742,7 +742,7 @@ has_det 기반 성공 정의,0.05/640과 단일 검사 0.25, 텍스트-only 요�
 | <a id="layout18-table-29-row-1"></a> 그림 입력과 추론 | app.py는 RGB 그림을 BGR 임시 JPEG로 저장하고 YOLO를 conf =0.05·imgsz640으로 실행합니다.<br>검출 상자 한 개 이상이면 탐지 성공으로 요약합니다. |
 | <a id="layout18-table-29-row-2"></a> 언어 모델 요청 | gpt-4o-mini에 보내는 것은 탐지 성공/실패와 분석 시각의 텍스트입니다.<br>그림 바이트·객체 좌표를 보내는 멀티 모달 요청이 아니며 10~15 문장 코멘트를 요청합니다. |
 | <a id="layout18-table-29-row-3"></a> 화면과 PDF | 결과 RGB 그림은 입력 그림을 돌려 준 것이며 검출 상자를 새로 그리지 않습니다.<br>FPDF가 시각·요약·메시지·입력 그림을 A4 PDF로 묶습니다. |
-| <a id="layout18-table-29-row-4"></a> 별도 질문과 API | 오른쪽 ask_gpt는 질문 한 건만 보내며 이전 대화·그림 분석을 자동 포함하지 않습니다. fastAPI.py의/gpt POST는 별도 진입 점으로 SDK 방식·모델 이름도 별도로 확인합니다. |
+| <a id="layout18-table-29-row-4"></a> 별도 질문과 API | 오른쪽 ask_gpt는 질문 한 건만 보내며 이전 대화·그림 분석을 자동 포함하지 않습니다. fastAPI.py의/gpt POST는 별도 진입점으로 SDK 방식·모델 이름도 별도로 확인합니다. |
 | <a id="layout18-table-29-row-5"></a> 단일 그림 검사 | train_result_check.py의 conf =0.25 는 기본 앱의 0.05와 다릅니다.<br>한 장의 추론 결과를 전체 시험 성능이나 심리 이해 성공으로 바꾸지 않습니다. |
 
 
@@ -755,7 +755,7 @@ has_det 기반 성공 정의,0.05/640과 단일 검사 0.25, 텍스트-only 요�
 | 조건·자료 | 의미와 확인 방법 |
 | --- | --- |
 | <a id="layout18-table-30-row-1"></a> 저장소 루트에서 실행 | Python 환경과 gradio·ultralytics·opencv-python·fpdf2·openai를 준비합니다.<br>실행 프로세스가 OPENAI_API_KEY를 읽을 수 있어야합니다. |
-| <a id="layout18-table-30-row-2"></a> 가중치·작업·폰트 | app.py의 YOLO_MODEL_PATH·PROJECT_DIR·FONT_PATH를 실제 경로로 맞춥니다.<br>기본 가중치 위치는 drawing_yolo_run/v8 _finetune/weights/last.pt이며 한글 폰트가 별도로 필요합니다. |
+| <a id="layout18-table-30-row-2"></a> 가중치·작업·폰트 | app.py의 YOLO_MODEL_PATH·PROJECT_DIR·FONT_PATH를 실제 경로로 맞춥니다.<br>기본 가중치 위치는 drawing_yolo_run/v8_finetune/weights/last.pt이며 한글 폰트가 별도로 필요합니다. |
 | <a id="layout18-table-30-row-3"></a> 입력 수동·출력 자동 | input/은 먼저 준비해야 합니다.<br>업로드는 input/temp.jpg에 저장하고 result/는 코드가 생성해 result/report.pdf를 씁니다.<br>폴더 존재와 쓰기 권한을 확인합니다. |
 | <a id="layout18-table-30-row-4"></a> config.py와 앱 설정 | config.py에 환경 변수 설정이 있어도 기본 app.py는 그 모듈을 가져오지 않고 자체 경로를 씁니다.<br>환경 변수 이름만 바꾸면 모든 앱 경로가 바뀐다고 생각하지 않습니다. |
 | <a id="layout18-table-30-row-5"></a> 실행과 결과 보관 | 원문의 가상 환경 준비·app.py 실행 명령을 저장소 루트에서 사용합니다.<br>Gradio 주소를 연 뒤 결과를 확인하고 필요한 그림/PDF 는 다음 실행 전에 별도로 보관합니다. |

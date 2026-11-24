@@ -5,7 +5,7 @@
 | 환경변수 | 준비할 값 |
 | --- | --- |
 | `OPENAI_API_KEY` | 사용자 본인의 서비스 API 키 |
-| `PDF_OUTPUT_PATH` | 보고서를 저장할 출력 폴더 경로 |
+| `PDF_OUTPUT_PATH` | PDF 파일의 출력 경로(파일명 포함) |
 | `YOLO_MODEL_PATH` | 허가된 모델 파일의 경로 |
 
 ## 실제 변경
