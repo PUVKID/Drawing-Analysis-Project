@@ -3,7 +3,16 @@
 # 기본 구성·그림 분석에서 대화와 PDF까지
 
 <!-- reading-levels17:start -->
-**읽기 수준 선택** · [LEVEL 1 - Beginner](#reading-level-1) · [LEVEL 2 - Explorer](#reading-level-2) · [LEVEL 3 - Practitioner](#reading-level-3) · [LEVEL 4 - Advanced](#reading-level-4) · [LEVEL 5 - Expert](#reading-level-5)
+| 읽기 수준 | 설명의 초점 |
+| --- | --- |
+| [LEVEL 1 · Beginner](#reading-level-1) | 목적과 동작부터 |
+| [LEVEL 2 · Explorer](#reading-level-2) | 구성과 연결 원리 |
+| [LEVEL 3 · Practitioner](#reading-level-3) | 준비·실행·결과 확인 |
+| [LEVEL 4 · Advanced](#reading-level-4) | 구현·설계·실패 처리 |
+| [LEVEL 5 · Expert](#reading-level-5) | 근거·프로토콜·한계 검토 |
+
+<details open>
+<summary><strong>LEVEL 1 · Beginner</strong> — 목적과 동작부터</summary>
 
 <a id="reading-level-1"></a>
 
@@ -185,6 +194,12 @@
 
 [표·코드·실행 설정·파일 전체 비교를 포함한 공통 상세](#reading-level-5)
 
+
+</details>
+
+<details>
+<summary><strong>LEVEL 2 · Explorer</strong> — 구성과 연결 원리</summary>
+
 <a id="reading-level-2"></a>
 
 ## LEVEL 2 - Explorer
@@ -364,6 +379,12 @@ app.py의 analyze_and_suggest가 그림을 저장하고 YOLO를 호출합니다.
 원본 그림과 상세 좌표가 언어 모델에 전달되지 않는 한계를 기억합니다. 고정 저장 이름과 예외 표시도 확인해야 합니다. 앱에서 보이는 완성된 PDF가 독립 평가 자료를 뜻하지는 않습니다.
 
 [표·코드·실행 설정·파일 전체 비교를 포함한 공통 상세](#reading-level-5)
+
+
+</details>
+
+<details>
+<summary><strong>LEVEL 3 · Practitioner</strong> — 준비·실행·결과 확인</summary>
 
 <a id="reading-level-3"></a>
 
@@ -545,6 +566,12 @@ app.py 실행 조건을 준비한 뒤 두 요청과 PDF 경로를 따로 검토�
 
 [표·코드·실행 설정·파일 전체 비교를 포함한 공통 상세](#reading-level-5)
 
+
+</details>
+
+<details>
+<summary><strong>LEVEL 4 · Advanced</strong> — 구현·설계·실패 처리</summary>
+
 <a id="reading-level-4"></a>
 
 ## LEVEL 4 - Advanced
@@ -724,6 +751,12 @@ app.py 실행 조건을 준비한 뒤 두 요청과 PDF 경로를 따로 검토�
 문맥 손실·동시 저장 충돌·외부 의존성·평가 누수가 설계 검토 지점입니다. 고정 이름과 비분리 요청은 기능 범위의 제한이며, 이를 숨기고 다중 사용자 상담 시스템으로 설명하지 않습니다.
 
 [표·코드·실행 설정·파일 전체 비교를 포함한 공통 상세](#reading-level-5)
+
+
+</details>
+
+<details>
+<summary><strong>LEVEL 5 · Expert</strong> — 근거·프로토콜·한계 검토</summary>
 
 <a id="reading-level-5"></a>
 
@@ -1026,3 +1059,6 @@ python -m venv .venv
 [프로젝트 첫 화면](../../README.md) · [전체 자료 안내](../REVISION_INDEX.md) · [구성 기록](../VERSIONS.md)
 
 [전체 구성과 변경 기록](../VERSIONS.md)
+
+</details>
+

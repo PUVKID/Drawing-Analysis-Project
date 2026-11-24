@@ -10,11 +10,11 @@
 <!-- reading-levels17:start -->
 | 읽기 수준 | 안내 내용 |
 | --- | --- |
-| [LEVEL 1 - Beginner](docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A81.md) | 낯선 용어를 풀고 입력부터 결과까지 구체적인 예로 읽기 |
-| [LEVEL 2 - Explorer](docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A82.md) | 핵심 개념과 처리 흐름의 관계 이해 |
-| [LEVEL 3 - Practitioner](docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A83.md) | 실험·사용 절차와 결과 해석 따라가기 |
-| [LEVEL 4 - Advanced](docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A84.md) | 코드 구조·설정·설계 선택과 제약 검토 |
-| [LEVEL 5 - Expert](docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A85.md) | 논문·프로토콜·분모·누수·미검증 범위 대조 |
+| [**LEVEL 1 - Beginner**](docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A81.md) | 낯선 용어를 풀고 입력부터 결과까지 구체적인 예로 읽기 |
+| [**LEVEL 2 - Explorer**](docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A82.md) | 핵심 개념과 처리 흐름의 관계 이해 |
+| [**LEVEL 3 - Practitioner**](docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A83.md) | 실험·사용 절차와 결과 해석 따라가기 |
+| [**LEVEL 4 - Advanced**](docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A84.md) | 코드 구조·설정·설계 선택과 제약 검토 |
+| [**LEVEL 5 - Expert**](docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A85.md) | 논문·프로토콜·분모·누수·미검증 범위 대조 |
 <!-- reading-levels17:end -->
 
 분야: 컴퓨터 비전·자연어 처리 › 검출·언어 모델 연결 › 그림 탐지 요약→대화·PDF
@@ -60,9 +60,9 @@ YOLO 그림 탐지, 텍스트 질문, PDF 기록을 연결하는 기본 앱입�
 
 ## 전체 차수
 
-| 차수·단계 | 주요 내용 | 자료 | 직전 비교 |
-| --- | --- | --- | --- |
-| [기본](docs/versions/stage-1.md) | 그림 탐지·텍스트 대화·PDF와 데이터 생성·학습 보조를 연결한 기본 구성입니다. | [폴더](docs) | [전체 비교](docs/VERSIONS.md) |
+| 차수·단계 | 주요 내용 | 자료 · 직전 비교 |
+| --- | --- | --- |
+| [기본](docs/versions/stage-1.md) | 그림 탐지·텍스트 대화·PDF와 데이터 생성·학습 보조를 연결한 기본 구성입니다. | [폴더](docs)<br>[전체 비교](docs/VERSIONS.md) |
 
 <a name="introduction"></a>
 
@@ -245,9 +245,9 @@ python -m venv .venv
 
 ## 자료 폴더와 차수별 변화
 
-| 자료 | 자료 폴더 | 설명 | 비교·구성 |
-| --- | --- | --- | --- |
-| 기본 | [자료 폴더](docs) | [내용](docs/versions/stage-1.md) | [비교·구성](docs/VERSIONS.md) |
+| 자료 | 자료 폴더 | 설명 · 비교·구성 |
+| --- | --- | --- |
+| 기본 | [자료 폴더](docs) | [내용](docs/versions/stage-1.md)<br>[비교·구성](docs/VERSIONS.md) |
 
 <a id="-기본-앱과-학습-보조의-세부-구성"></a>
 
