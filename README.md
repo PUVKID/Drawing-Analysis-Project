@@ -24,7 +24,7 @@
   <source media="(max-width: 600px)" srcset="assets/readme/flow-ko-light-mobile.svg" />
   <source media="(prefers-color-scheme: dark)" srcset="assets/readme/flow-ko-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="assets/readme/flow-ko-light.svg" />
-  <img src="assets/readme/flow-ko-light.svg" alt="Drawing Analysis Project: 그림 · 텍스트 → YOLO 요약 · GPT → 대화 · PDF" width="100%" />
+  <img src="assets/readme/flow-ko-light.svg" alt="그림 · 텍스트: 그림 이미지와 사용자 질문 → YOLO 요약 · GPT: 탐지 요약을 텍스트 요청에 연결 → 대화 · PDF: 입력 그림을 담은 PDF 다운로드" width="100%" />
 </picture>
 <!-- readme-header32:end -->
 
