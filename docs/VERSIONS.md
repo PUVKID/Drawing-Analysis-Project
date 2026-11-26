@@ -1,3 +1,7 @@
+<!-- language-choice:start -->
+🔵 **한국어** · [English overview](../en/README.md)
+<!-- language-choice:end -->
+
 # 현재 공개 파일과 차수별 변화
 
 <!-- reading-levels17:start -->
